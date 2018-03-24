@@ -23,7 +23,8 @@ string addBinary(string a, string b) {
         int i=0;
         for(i=len-1;i>=0;i--)
         {
-            if(a[i]=='0'&&b[--len_b]=='0')
+		len_b--;
+            if(a[i]=='0'&&b[len_b]=='0')
             {   
                 if(tag==1)
                 {
@@ -36,7 +37,7 @@ string addBinary(string a, string b) {
                 }
                 
             }
-            else if(b[--len_b]=='1'&&a[i]=='1')
+            else if(b[len_b]=='1'&&a[i]=='1')
             {
                 if(tag==1)
                 {
