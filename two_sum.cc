@@ -20,8 +20,7 @@ public:
                 low=middle+1;
             }
         }
-        return -1;
-        
+        return -1;    
     }
     vector<int> twoSum(vector<int>& numbers, int target) {
         int len=numbers.size();
@@ -37,13 +36,32 @@ public:
             {
                 index2=ret+1;
                 break;
-            }
-            
+            }   
         }
         tmp[0]=index1<index2?index1:index2;
         tmp[1]=index1>index2?index1:index2;
-        
-        return tmp;
-        
+        return tmp; 
+    }
+     vector<int> twoSum(vector<int>& numbers, int target) {
+        int len=numbers.size();
+        if(len<=0)
+            return {};
+        int i=0,j=len-1;
+        int t;
+        while(i<=j)
+        {
+            t=numbers[i]+numbers[j];
+            if(t>target)
+            {
+                --j;
+            }else if(t<target)
+            {
+                ++i;
+            }else if (t==target)
+            {
+                return {i+1,j+1};
+            }
+        }
         
     }
+};
