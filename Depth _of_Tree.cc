@@ -6,7 +6,7 @@ public:
         int depth_l = maxDepth(root->left);
         int depth_r = maxDepth(root->right);
 
-        return  > depth_r  ? depth_l + 1:depth_r + 1;
+        return  depth_l > depth_r  ? depth_l + 1:depth_r + 1;
         //这样写返回不了结果？？why？
        // return maxDepth(root->left)>maxDepth(root->right)?(maxDepth(root->left)+1):(maxDepth(root->right)+1);
         
