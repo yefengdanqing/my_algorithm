@@ -7,7 +7,7 @@ public:
         int depth_r = maxDepth(root->right);
 
         return  depth_l > depth_r  ? depth_l + 1:depth_r + 1;
-        //这样写返回不了结果？？why？
+        //这样写返回不了结果？？why？because:当数据量很大的时候是，会超时（栈溢出？？）
        // return maxDepth(root->left)>maxDepth(root->right)?(maxDepth(root->left)+1):(maxDepth(root->right)+1);
         
         /*if(root!=NULL)
