@@ -1,4 +1,4 @@
-//由于直接从链表中摘除，需要考虑内存泄漏
+//由于直接从链表中摘除，需要考虑内存泄漏，并且要考虑到下个节点为空的情况
 class Solution {
 public:
     ListNode* deleteDuplicates(ListNode* head) {
