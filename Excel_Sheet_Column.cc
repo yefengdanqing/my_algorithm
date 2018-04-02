@@ -18,6 +18,7 @@ int ConvertTitle(string& s)
 		return 0;
 	int ret=0;
 	int j=1;
+	//一个数跟着循环次数成指数上涨，如26*26，8*8*8
 	for(int i=len-1;i>=0;i--,j*=26)
 	{
 		ret=(s[i]-'A'+1)*j+ret;
