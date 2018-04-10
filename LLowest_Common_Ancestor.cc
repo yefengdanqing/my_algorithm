@@ -8,6 +8,7 @@
  *     TreeNode(int x) : val(x), left(NULL), right(NULL) {}
  * };
  */
+//有错
 class Solution {
 public:
     int FindCountNode(TreeNode* root, TreeNode* p, TreeNode* q){
