@@ -66,3 +66,46 @@ public:
         
     }
 };
+//copy-基础思想，要想到剪纸，去掉几个最不可能
+class Solution {
+public:
+    vector<vector<int> > combinationSum2(vector<int> &num, int target) {
+        vector<vector<int> > result;
+        vector<vector<int> > subsets;
+        vector<int> empty;
+        subsets.push_back(empty);
+        
+        sort(num.begin(), num.end());
+        for(int i = 0; i < num.size();)
+        {//for each number
+            int count = 0;
+            int cur = num[i];
+            if(cur > target)    //end
+                return result;
+            while(i < num.size() && num[i] == cur)
+            {//repeat count
+                i ++;
+                count ++;
+            }
+            int size = subsets.size();    //orinigal size instead of calling size() function
+            for(int j = 0; j < size; j ++)
+            {
+                vector<int> sub = subsets[j];
+                int tempCount = count;
+                while(tempCount --)
+                {
+                    sub.push_back(cur);
+                    int sum = accumulate(sub.begin(), sub.end(), 0);
+                    if(sum == target)
+                    {
+                        result.push_back(sub);
+                        subsets.push_back(sub);
+                    }
+                    else if(sum < target)
+                        subsets.push_back(sub);
+                }
+            }
+        }
+        return result;
+    }
+};
