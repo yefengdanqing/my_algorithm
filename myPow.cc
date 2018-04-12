@@ -20,6 +20,7 @@ public:
             return x*x;
         if(n%2==1)
            // return myPow(myPow(x,n/2),2)*x;
+            //两个myPow是多次调用
             return x*myPow(x,n/2)*myPow(x,n/2);
         if(n%2==0)
             return myPow(myPow(x,n/2),2);
