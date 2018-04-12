@@ -5,7 +5,7 @@
             data.push_back(result);
             return;
         }
-        //不能从0开始，不会出现从后面的开始，然后选择了前面比较小的数
+        //不能从0开始，不然会出现从后面的开始，然后选择了前面比较小的数的情况
         for(int i=pos;i<candidates.size();i++)
         {
             if(candidates[i]>target) break;
